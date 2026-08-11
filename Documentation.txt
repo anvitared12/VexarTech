@@ -1,0 +1,66 @@
+Initial Input Data Information:
+Given :
+1. 1 week of trip data
+2. 30 drivers and 30 2 wheeler vehicles
+3. 450 trips total and 15 trips/driver
+4. Logged per minute GPS and IMU.
+
+Info on GPS and IMU:
+GPS tells where you are?
+IMU consists of accelerometer(measures acceleration) and gyroscope(how it is rotating / tells when something turns or rotates).
+
+-----------THE ABOVE ARE THE GENRALIZED FEATURES GIVEN---------
+
+-----------BELOW ARE EXACT COLUMNS AND THEIR INFO PRESENT IN DATA---------
+
+Drivers :
+Driver_ID
+Driver_Name
+Age
+Gender
+License_Experience_Years
+Date_Joined_Fleet
+Primary_Vehicle_ID
+Home_Hub
+
+Vehicles :
+Vehicle_ID
+Vehicle_Type
+Make
+Model
+Manufacture_Year
+Registration_Date
+Odometer_KM_Start_of_Week
+Last_Service_Date
+
+Trips :
+Trip_ID
+Driver_ID d
+Vehicle_ID v
+Trip_Date
+Start_Time/End_Time
+Duration_Min
+Distance_KM
+Avg_Speed_kmph
+Max_Speed_kmph
+Start_Latitude
+End_Latitude
+Start_Longitude
+End_Longitude
+
+Telemetry :
+Trip_ID t
+Driver_ID t,d
+Vehicle_ID t,v
+Timestamp
+Lattitude
+Longitude
+Speed_kmph
+Accel_X_g
+Accel_Y_g
+Accel_Z_g
+Gyro_X_dps
+Gyro_Y_dpd
+Gyro_Z_dps
+
+qn to answer which table to merge what columns you need drop
