@@ -63,4 +63,3 @@ Gyro_X_dps
 Gyro_Y_dpd
 Gyro_Z_dps
 
-qn to answer which table to merge what columns you need drop
