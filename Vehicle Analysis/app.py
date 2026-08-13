@@ -7,7 +7,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Vehicle Health Dashboard",layout="wide",)
 
-DATASET_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "Datasets")
+DATASET_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Datasets")
 
 TIER_COLORS = {"Low": "#2ecc71", "Medium": "#f1c40f", "High": "#e74c3c"}
 

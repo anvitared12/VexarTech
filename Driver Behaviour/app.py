@@ -6,7 +6,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Risky vs Safe Driver Dashboard",layout="wide",)
 
-DATASET_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "Datasets")
+DATASET_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Datasets")
 if not os.path.exists(DATASET_DIR):
     DATASET_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "Datasets")
 
