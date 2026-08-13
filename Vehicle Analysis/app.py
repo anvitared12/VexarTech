@@ -233,9 +233,9 @@ show_cols = [c for c in [
 ] if c in result.columns]
 st.dataframe(
     style_cell_colors(
-        driver_summary[show_cols].style,
+        result[show_cols].style,
         TIER_COLORS,
-        subset=["risk_tier"] if "risk_tier" in show_cols else [],
+        subset=["Maintenance_Risk"] if "Maintenance_Risk" in show_cols else [],
     ),
     use_container_width=True,
     height=300,
