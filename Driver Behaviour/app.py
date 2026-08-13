@@ -12,6 +12,12 @@ if not os.path.exists(DATASET_DIR):
 
 TIER_COLORS = {"Safe": "#2ecc71", "Risky": "#e74c3c"}
 
+def style_cell_colors(styler, color_map, subset):
+    func = lambda v: f"background-color: {color_map.get(v, '')}; color: white; font-weight: bold;" if v in color_map else ""
+    if hasattr(styler, "map"):
+        return styler.map(func, subset=subset)
+    return styler.applymap(func, subset=subset)
+
 def load_from_folder(folder):
     df_drivers = pd.read_excel(os.path.join(folder, "Drivers.xlsx"))
     df_telemetry = pd.read_excel(os.path.join(folder, "Telemetry.xlsx"))
@@ -201,9 +207,9 @@ st.subheader("All Drivers — Safety Scores")
 show_cols = [c for c in ["Driver_ID", "Driver_Name", "safety_score", "risk_tier", "total_trips",
                           "Accel_flag_rate", "Gyro_flag_rate", "avg_trip_risk_rate"] if c in driver_summary.columns]
 st.dataframe(
-    driver_summary[show_cols].style.applymap(
-        lambda v: f"background-color: {TIER_COLORS.get(v, '')}; color: white; font-weight: bold;"
-        if v in TIER_COLORS else "",
+    style_cell_colors(
+        driver_summary[show_cols].style,
+        TIER_COLORS,
         subset=["risk_tier"] if "risk_tier" in show_cols else [],
     ),
     use_container_width=True,

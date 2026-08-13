@@ -11,6 +11,12 @@ DATASET_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Datasets
 
 TIER_COLORS = {"Low": "#2ecc71", "Medium": "#f1c40f", "High": "#e74c3c"}
 
+def style_cell_colors(styler, color_map, subset):
+    func = lambda v: f"background-color: {color_map.get(v, '')}; color: white; font-weight: bold;" if v in color_map else ""
+    if hasattr(styler, "map"):
+        return styler.map(func, subset=subset)
+    return styler.applymap(func, subset=subset)
+
 def load_from_folder(folder):
     df_vehicles = pd.read_excel(os.path.join(folder, "Vehicles.xlsx"))
     df_telemetry = pd.read_excel(os.path.join(folder, "Telemetry.xlsx"))
@@ -226,10 +232,10 @@ show_cols = [c for c in [
     "Vehicle_Age", "Odometer_KM_Start_of_Week", "Days_Since_Service",
 ] if c in result.columns]
 st.dataframe(
-    result[show_cols].style.applymap(
-        lambda v: f"background-color: {TIER_COLORS.get(v, '')}; color: white; font-weight: bold;"
-        if v in TIER_COLORS else "",
-        subset=["Maintenance_Risk"] if "Maintenance_Risk" in show_cols else [],
+    style_cell_colors(
+        driver_summary[show_cols].style,
+        TIER_COLORS,
+        subset=["risk_tier"] if "risk_tier" in show_cols else [],
     ),
     use_container_width=True,
     height=300,

@@ -67,9 +67,15 @@ Gyro_Z_dps
 
 Other which can be found out:
 
+From Odometer value:
 Fuel Efficiency of Vehicle : Tracking distance against fuel fill-ups lets you calculate true miles-per-gallon (MPG) to
 spot engine performance drops.
 
+From Manufacture Year:
 Actual Age vs. Paper Age: A car built in November might be registered in January of the next year; the paperwork says
 it is newer, but the rubber, battery, and fluid components have been aging on a lot
+
+From Make and Model:
+From this we can collect data from internet on difference between build of vehicles which could give us information
+drawbacks of particular vehicle.
 
