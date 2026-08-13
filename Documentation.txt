@@ -63,3 +63,13 @@ Gyro_X_dps
 Gyro_Y_dpd
 Gyro_Z_dps
 
+
+
+Other which can be found out:
+
+Fuel Efficiency of Vehicle : Tracking distance against fuel fill-ups lets you calculate true miles-per-gallon (MPG) to
+spot engine performance drops.
+
+Actual Age vs. Paper Age: A car built in November might be registered in January of the next year; the paperwork says
+it is newer, but the rubber, battery, and fluid components have been aging on a lot
+
