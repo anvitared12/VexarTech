@@ -35,8 +35,8 @@ Last_Service_Date
 
 Trips :
 Trip_ID
-Driver_ID d
-Vehicle_ID v
+Driver_ID
+Vehicle_ID
 Trip_Date
 Start_Time/End_Time
 Duration_Min
@@ -50,8 +50,8 @@ End_Longitude
 
 Telemetry :
 Trip_ID t
-Driver_ID t,d
-Vehicle_ID t,v
+Driver_ID
+Vehicle_ID
 Timestamp
 Lattitude
 Longitude
@@ -63,9 +63,12 @@ Gyro_X_dps
 Gyro_Y_dpd
 Gyro_Z_dps
 
+All the validation for the decision taken is mentioned in notebook itself which will give you a clear overview.
+(Commented and Markdown)
+At the end result I have taken threshold is such a way that drivers and vehicles get classified taking consideration
+into the initial flags counts.
 
-
-Other which can be found out:
+Other than the two dashboards we can find out about these factors:
 
 From Odometer value:
 Fuel Efficiency of Vehicle : Tracking distance against fuel fill-ups lets you calculate true miles-per-gallon (MPG) to
@@ -79,3 +82,10 @@ From Make and Model:
 From this we can collect data from internet on difference between build of vehicles which could give us information
 drawbacks of particular vehicle.
 
+From Latitude and Longitude:
+Geographic Mapping (Latitude, Longitude): Traces the exact physical route on a map.
+
+Taking Registered date and accordingly keeping records for vehicles pollution test and servicing will help in taking care
+of vehicles in long run.
+
+By using Gyrometer and Accelerometer we can predict weather the driver has been in accident.
